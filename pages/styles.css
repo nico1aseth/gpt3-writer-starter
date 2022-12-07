@@ -113,7 +113,7 @@ body {
   width: 300px;
   max-width: 1200px;
   will-change: transform;
-  overflow: auto;
+  overflow: hidden;
   outline: none;
   resize: none;
   font-size: 35px;
@@ -223,7 +223,7 @@ textarea {
 }
 
 .mark {
-  background-image: url(../assets/mark.gif);
+  background-image: url('https://raw.githubusercontent.com/nico1aseth/gpt3-writer-starter/main/assets/mark.gif');
   background-repeat: no-repeat;
   width: 500px;
   height: 275px;
