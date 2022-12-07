@@ -8,7 +8,7 @@ const openai = new OpenAIApi(configuration)
 
 const basePromptPrefix = `
 This is a chat with Mark Zuckerberg, the founder of Meta.
-Explain me the following data structures or algorithms with the title below.
+Explain me the following data structures or algorithms with the title below. Make sure the explanation goes in-depth on the topic with use cases in Meta.
 
 Title:
 `
@@ -20,18 +20,18 @@ const generateAction = async (req, res) => {
     model: 'text-davinci-003',
     prompt: `${basePromptPrefix}${req.body.userInput}`,
     temperature: 0.8,
-    max_tokens: 250,
+    max_tokens: 300,
   })
 
   const basePromptOutput = baseCompletion.data.choices.pop()
 
   // I build Prompt #2.
   const secondPrompt = `
-  Take the data structures or algorithms (DSA) and title of the DSA below and make sure the explanation goes in-depth on the topic with use cases in Meta. Make it feel like a story. Don't just list the points. Go deep into each one. Explain why.
+  Take the table of contents and title of the data structures or algorithms below and generate a blog post written in the style of Paul Graham. Make it feel like a story. Don't just list the points. Go deep into each one. Explain why.
 
   Title: ${req.body.userInput}
 
-  Data structures or algorithms: ${basePromptOutput.text}
+  Table of Contents: ${basePromptOutput.text}
 
   Blog Post:
   `
@@ -43,7 +43,7 @@ const generateAction = async (req, res) => {
     // I set a higher temperature for this one. Up to you!
     temperature: 0.85,
     // I also increase max_tokens.
-    max_tokens: 1250,
+    max_tokens: 1000,
   })
 
   // Get the output

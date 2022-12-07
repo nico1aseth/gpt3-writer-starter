@@ -43,6 +43,18 @@ body {
   color: #fff;
 }
 
+.bar img {
+  width: 80px;
+  height: 55px;
+  image-rendering: pixelated;
+  transform: none;
+  transform-origin: 50% 50% 0px;
+  border-radius: 30px;
+  position: relative;
+  margin-left: -700px;
+  margin-top: 10px;
+}
+
 .header-title {
   display: flex;
   gap: 12px;
@@ -51,7 +63,7 @@ body {
 .header-title h1 {
   width: 100%;
   font-weight: 700;
-  font-size: 72px;
+  font-size: 60px;
   letter-spacing: -4px;
   line-height: 1.2em;
   text-align: center;
@@ -64,6 +76,7 @@ body {
   font-weight: 400;
   line-height: 1.4em;
   color: rgba(255, 255, 255, 0.75);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .prompt-container {
@@ -80,7 +93,7 @@ body {
 
 .prompt-box {
   border-bottom-width: 1px;
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: pink;
   border-left-width: 1px;
   border-right-width: 1px;
   border-style: solid;
@@ -93,24 +106,25 @@ body {
   flex: 0 0 auto;
   flex-flow: column nowrap;
   gap: 10px;
-  height: 150px;
+  height: 50px;
   overflow: hidden;
   padding: 20px;
   position: relative;
-  width: 610px;
+  width: 300px;
   max-width: 1200px;
   will-change: transform;
   overflow: auto;
   outline: none;
   resize: none;
-  font-size: 16px;
+  font-size: 35px;
   font-style: normal;
   letter-spacing: 0px;
   line-height: 1.6em;
-  text-align: start;
-  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  color: white;
   text-decoration: none;
   text-transform: none;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 textarea {
@@ -125,7 +139,7 @@ textarea {
   display: flex;
   place-content: center;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   flex: 0 0 auto;
   flex-flow: row nowrap;
   gap: 12px;
@@ -170,7 +184,7 @@ textarea {
 .generate-button {
   place-content: flex-start;
   align-items: flex-start;
-  background-color: rgb(255, 79, 18);
+  background-color: rgb(5, 227, 247);
   border-radius: 100px;
   display: flex;
   flex: 0 0 auto;
@@ -184,6 +198,7 @@ textarea {
   width: min-content;
   will-change: transform;
   cursor: pointer;
+  margin-top: 5px;
 }
 
 .generate {
@@ -198,11 +213,21 @@ textarea {
 .generate p {
   color: rgb(255, 255, 255);
   margin: 0;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .loading {
   opacity: 0.7;
   cursor: default;
+}
+
+.mark {
+  background-image: url(../assets/mark.gif);
+  background-repeat: no-repeat;
+  width: 500px;
+  height: 275px;
+  margin-top: 5px;
 }
 
 .badge-container {
@@ -237,27 +262,6 @@ textarea {
   text-decoration: none;
 }
 
-.badge {
-  display: flex;
-  align-items: center;
-}
-
-.badge img {
-  width: 21px;
-  height: 17px;
-  image-rendering: pixelated;
-  flex-shrink: 0;
-  fill: black;
-  color: black;
-  transform: none;
-  transform-origin: 50% 50% 0px;
-  padding-right: 5px;
-}
-
-.badge p {
-  margin: 0;
-}
-
 .grow {
   transition: all 0.2s ease-in-out;
 }
@@ -280,48 +284,29 @@ textarea {
   width: 100%;
 }
 
-.output-header-container {
-  place-content: center;
-  align-items: center;
-  display: flex;
-  flex: 0 0 auto;
-  flex-flow: column nowrap;
-  gap: 16px;
-  height: min-content;
-  overflow: hidden;
-  padding: 0px;
-  position: relative;
-  width: 100%;
-}
-
-.output-header h3 {
-  font-family: 'Manrope', serif;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 800;
-  letter-spacing: 0px;
-  line-height: 1.4em;
-  text-align: start;
-  color: #ffffff;
-  text-decoration: none;
-  text-transform: none;
-  margin: 0;
-}
-
 .output-content {
   outline: none;
   display: flex;
-  /* max-width: 25%; */
+  width: 500px;
   flex-direction: column;
   justify-content: flex-start;
   flex-shrink: 0;
   transform: none;
+  border-bottom-width: 1px;
+  border-color: pink;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 1px;
+  border-radius: 16px;
+  padding: 15px;
 }
 
 .output-content p {
   text-align: center;
   white-space: pre-line;
-  color: rgba(255, 255, 255, 0.5);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @media (min-width: 810px) and (max-width: 1199px) {
@@ -409,4 +394,11 @@ textarea {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.author p {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
